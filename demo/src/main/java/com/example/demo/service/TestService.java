@@ -29,4 +29,13 @@ public class TestService {
         arrowDataRepo.save(arrowData);
 
     }
+
+    public ArrowData getArrow() {
+
+        //Find는  select 쿼리문이다.
+        // findById는  select * from 테이블명 where id = 1;
+        //  primary key 지정된 컬럼으로 조회하는 쿼리문 실행 시켜준다.
+        ArrowData arrowData = arrowDataRepo.findById(1L).get();
+        return arrowData;
+    }
 }

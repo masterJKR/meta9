@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.entity.ArrowData;
 import com.example.demo.entity.TestJson;
 import com.example.demo.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,12 @@ public class TestAPIController {
         System.out.println("데이터 : " + map);
         testService.arrowSave( map );
         return map;
+    }
+
+    // DB에 저장된 화살 수량 보내기
+    @GetMapping("/getarrow")
+    public ArrowData getarrow() {
+        return testService.getArrow();
     }
 
 
